@@ -1,0 +1,24 @@
+{
+  "name": "fullfact",
+  "version": "0.1.0",
+  "description": "Create full-factorial DOE designs",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcartw/fullfact.git"
+  },
+  "keywords": [
+    "doe",
+    "fullfact",
+    "full-factorial"
+  ],
+  "author": "Justin Cartwright",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcartw/fullfact/issues"
+  },
+  "homepage": "https://github.com/jcartw/fullfact#readme"
+}
