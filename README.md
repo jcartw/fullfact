@@ -32,7 +32,7 @@ of the form:
 
 - `{ [key: string]: any[] }`
 
-Consider the example, where we have an experiment of two factors: (1) temperature [C]
+Consider an example where we have an experiment of two factors: (1) temperature [C]
 and (2) pressure [kPa]. A factor matrix could be defined as:
 
 ```
