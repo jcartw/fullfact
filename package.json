@@ -4,7 +4,7 @@
   "description": "Create full-factorial DOE designs",
   "main": "src/index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test/test.js"
   },
   "repository": {
     "type": "git",

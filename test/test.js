@@ -1,30 +1,27 @@
-
 const { expect } = require("chai");
 
+const { fullfact } = require("../src/index");
 
-describe("State Routes", () => {
-  let stateUuid;
+describe("Full-factorial DOEs", () => {
+  it("should create a fullfact DOE with levels = [2, 2]", () => {
+    const levels = [2, 2];
+    const doe = fullfact(levels);
+    expect(doe.length).to.equal(4);
 
-  it("should pass", () => {
+    expect(doe[0].length).to.equal(2);
+    expect(doe[0][0]).to.equal(0);
+    expect(doe[0][1]).to.equal(0);
 
-  })
+    expect(doe[1].length).to.equal(2);
+    expect(doe[1][0]).to.equal(1);
+    expect(doe[1][1]).to.equal(0);
 
-  it.skip("should create a state", async () => {
-    const reqBody = {
-      name: "Ohio",
-      abbreviation: "OH",
-      capital: "Columbus",
-      population: 11689100,
-      country: "US",
-    };
+    expect(doe[2].length).to.equal(2);
+    expect(doe[2][0]).to.equal(0);
+    expect(doe[2][1]).to.equal(1);
 
-    const res = await superagent.post(`${baseUrl}/states`).send(reqBody);
-
-    expect(res.status).to.equal(201);
-    expect(res.body).to.haveOwnProperty("uuid");
-    expect(res.body).to.haveOwnProperty("name");
-    expect(res.body.name).to.equal(reqBody.name);
-    stateUuid = res.body.uuid;
+    expect(doe[3].length).to.equal(2);
+    expect(doe[3][0]).to.equal(1);
+    expect(doe[3][1]).to.equal(1);
   });
-
 });
