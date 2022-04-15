@@ -10,7 +10,7 @@ const fullfact = (levels) => {
     !Array.isArray(levels) ||
     !levels.reduce((a, c) => a && Number.isInteger(c), true)
   ) {
-    throw new Error("Argument 'levels' must be an array of integers.");
+    throw new Error("Argument must be an array of integers.");
   }
 
   const nFactors = levels.length;
@@ -36,7 +36,26 @@ const fullfact = (levels) => {
 };
 module.exports.fullfact = fullfact;
 
-const buildHydratedFullfact = (factorMatrix) => {
+const hydratedFullfact = (factorMatrix) => {
+  // check input argument
+  let inputCheckPass = false;
+  if (
+    typeof factorMatrix === "object" &&
+    !Array.isArray(factorMatrix) &&
+    factorMatrix !== null
+  ) {
+    inputCheckPass = Object.keys(factorMatrix).reduce(
+      (a, key) => a && Array.isArray(factorMatrix[key]),
+      true
+    );
+  }
+
+  if (!inputCheckPass) {
+    throw new Error(
+      "Argument must be an object of the form { [key: string]: any[] }."
+    );
+  }
+
   const keyList = Object.keys(factorMatrix);
   const levels = keyList.map((key) => factorMatrix[key].length);
   const doe = fullfact(levels);
@@ -47,4 +66,4 @@ const buildHydratedFullfact = (factorMatrix) => {
     }, {});
   });
 };
-module.exports.buildHydratedFullfact = buildHydratedFullfact;
+module.exports.hydratedFullfact = hydratedFullfact;
