@@ -35,6 +35,8 @@ Consider the example, where we have an experiment of two factors: (1) temperatur
 and (2) pressure [kPa]. A factor matrix could be defined as:
 
 ```
+const { hydratedFullfact } = require("fullfact");
+
 const factorMatrix = {
    temperature: [10, 20, 30],
    pressure: [90, 100, 110]
