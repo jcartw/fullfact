@@ -34,5 +34,17 @@ const fullfact = (levels) => {
 
   return H;
 };
-
 module.exports.fullfact = fullfact;
+
+const buildHydratedFullfact = (factorMatrix) => {
+  const keyList = Object.keys(factorMatrix);
+  const levels = keyList.map((key) => factorMatrix[key].length);
+  const doe = fullfact(levels);
+  return doe.map((x) => {
+    return keyList.reduce((a, key, idx) => {
+      a[key] = factorMatrix[key][x[idx]];
+      return a;
+    }, {});
+  });
+};
+module.exports.buildHydratedFullfact = buildHydratedFullfact;

@@ -1,6 +1,6 @@
 const { expect } = require("chai");
 
-const { fullfact } = require("../src/index");
+const { fullfact, buildHydratedFullfact } = require("../src/index");
 
 describe("Full-factorial DOEs", () => {
   it("should create a fullfact DOE with levels = [3]", () => {
@@ -99,5 +99,36 @@ describe("Full-factorial DOEs", () => {
       failed = true;
     }
     expect(failed).to.be.true;
+  });
+
+  it("should build a hydrated fullfact DOE", () => {
+    const factorMatrix = {
+      a: [1, 2],
+      b: ["x", "y", "z"]
+    };
+    const hydratedDoe = buildHydratedFullfact(factorMatrix);
+
+    // verify number of expected combinations
+    expect(hydratedDoe.length).to.equal(6);
+
+    // verify each object has the expected keys
+    for (let obj of hydratedDoe) {
+      expect(obj).to.haveOwnProperty("a");
+      expect(obj).to.haveOwnProperty("b");
+    }
+
+    // verify each entry
+    expect(hydratedDoe[0].a).to.equal(1);
+    expect(hydratedDoe[0].b).to.equal("x");
+    expect(hydratedDoe[1].a).to.equal(2);
+    expect(hydratedDoe[1].b).to.equal("x");
+    expect(hydratedDoe[2].a).to.equal(1);
+    expect(hydratedDoe[2].b).to.equal("y");
+    expect(hydratedDoe[3].a).to.equal(2);
+    expect(hydratedDoe[3].b).to.equal("y");
+    expect(hydratedDoe[4].a).to.equal(1);
+    expect(hydratedDoe[4].b).to.equal("z");
+    expect(hydratedDoe[5].a).to.equal(2);
+    expect(hydratedDoe[5].b).to.equal("z");
   });
 });
