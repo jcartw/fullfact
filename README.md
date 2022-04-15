@@ -59,9 +59,10 @@ console.log(hydratedDoe);
 ## Contributing
 
 This package is a derivative work, based on the python project [pyDOE](https://github.com/tisimst/pyDOE).
-Thanks to the author of that work and all contributors.
+Thanks to Abraham D. Lee and all contributors.
 
-Please feel free to reach out to the [author](mailto:cartwright.76@gmail.com) for any and all feedback.
+Please feel free to reach out to the [author](mailto:cartwright.76@gmail.com) of this package
+for any and all feedback.
 
 ## License
 
