@@ -82,4 +82,22 @@ describe("Full-factorial DOEs", () => {
     expect(doe[1][1]).to.equal(0);
     expect(doe[1][2]).to.equal(1);
   });
+  it("should throw an error if a string is passed as an arg", () => {
+    let failed = false;
+    try {
+      fullfact("abc");
+    } catch (err) {
+      failed = true;
+    }
+    expect(failed).to.be.true;
+  });
+  it("should throw an error if a non-integer is passed in the levels array", () => {
+    let failed = false;
+    try {
+      fullfact([1, 2, 3.5]);
+    } catch (err) {
+      failed = true;
+    }
+    expect(failed).to.be.true;
+  });
 });

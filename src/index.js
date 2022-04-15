@@ -5,6 +5,14 @@ function zeros2d(m, n) {
 }
 
 const fullfact = (levels) => {
+  // check input argument
+  if (
+    !Array.isArray(levels) ||
+    !levels.reduce((a, c) => a && Number.isInteger(c), true)
+  ) {
+    throw new Error("Argument 'levels' must be an array of integers.");
+  }
+
   const nFactors = levels.length;
   const nbLines = levels.reduce((accum, curr) => accum * curr, 1);
   const H = zeros2d(nbLines, nFactors);
@@ -28,36 +36,3 @@ const fullfact = (levels) => {
 };
 
 module.exports.fullfact = fullfact;
-
-//const levels = [2, 3, 3, 3];
-//console.log(fullfact(levels));
-
-//function fullfact(levels) {
-//  const nFactors = levels.length;
-//  const nbLines = levels.reduce((accum, curr) => accum * curr, 1);
-//  const H = zeros2d(nbLines, nFactors);
-//
-//  let levelRepeat = 1;
-//  let rangeRepeat = levels.reduce((a, c) => a * c, 1);
-//  let rngList = [];
-//
-//  // get matrix slices
-//  for (let i of R.range(0, nFactors)) {
-//    rangeRepeat = Math.floor(rangeRepeat / levels[i]);
-//    const lvl = R.flatten(
-//      R.map((x) => R.repeat(x, levelRepeat), R.range(0, levels[i]))
-//    );
-//    const rng = R.flatten(R.repeat(lvl, rangeRepeat));
-//    rngList.push(rng);
-//    levelRepeat *= levels[i];
-//  }
-//
-//  // fill matrix
-//  for (let i of R.range(0, nFactors)) {
-//    for (let k of R.range(0, nbLines)) {
-//      H[k][i] = rngList[i][k];
-//    }
-//  }
-//
-//  return H;
-//}
