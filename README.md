@@ -28,8 +28,9 @@ console.log(doe);
 A convenience function `hydratedFullfact` is also available
 to handle the mapping of DOE indices to key-value pairs within
 an array of objects. This function expects a factors matrix
-in the form of an object `{ [key: string]: any[] }`, where
-the object can have an arbitrary number of keys and arrays of any type.
+of the form:
+
+- `{ [key: string]: any[] }`
 
 Consider the example, where we have an experiment of two factors: (1) temperature [C]
 and (2) pressure [kPa]. A factor matrix could be defined as:
