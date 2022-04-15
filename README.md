@@ -61,7 +61,7 @@ console.log(hydratedDoe);
 This package is a derivative work, based on the python project [pyDOE](https://github.com/tisimst/pyDOE).
 Thanks to the author of that work and all contributors.
 
-Please feel free to reach out to the `author`\_ for any and all feedback.
+Please feel free to reach out to the [author](mailto:cartwright.76@gmail.com) for any and all feedback.
 
 ## License
 
@@ -73,6 +73,5 @@ Copyright (c) 2014, Abraham D. Lee
 
 ## References
 
-.. \_author: mailto:cartwright.76@gmail.com
-.. \_Factorial designs: https://en.wikipedia.org/wiki/Factorial_experiment
-.. \_package homepage: https://github.com/jcartw/fullfact
+- Factorial designs: https://en.wikipedia.org/wiki/Factorial_experiment
+- package homepage: https://github.com/jcartw/fullfact
