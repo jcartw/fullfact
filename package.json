@@ -16,7 +16,7 @@
     "full-factorial"
   ],
   "author": "Justin Cartwright",
-  "license": "MIT",
+  "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/jcartw/fullfact/issues"
   },

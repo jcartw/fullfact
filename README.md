@@ -1,3 +1,78 @@
 # fullfact
-A library for generating full-factorial DOEs
 
+A library for generating full-factorial Design of Experiments (DOEs).
+
+## Usage
+
+Add fullfact to your project by using:
+
+```sh
+npm install --save fullfact
+```
+
+## Examples
+
+To create a full-factorial matrix, start by specifying a levels
+array with the number of levels for each factor in your DOE.
+
+```
+const { fullfact } = require("fullfact");
+
+const levels = [2, 2];
+const doe = fullfact(levels);
+
+console.log(doe);
+// [ [ 0, 0 ], [ 1, 0 ], [ 0, 1 ], [ 1, 1 ] ]
+```
+
+A convenience function `hydratedFullfact` is also available
+to handle the mapping of DOE indicies to key-value pairs within
+an array of objects. This function expects a factors matrix
+in the form of an object `{ [key: string]: any[] }`, where
+the object can have an arbitrary number of keys and arrays of any type.
+
+Consider the example, where we have an experiment of two factors: (1) temperature [C]
+and (2) pressure [kPa]. A factor matrix could be defined as:
+
+```
+const factorMatrix = {
+   temperature: [10, 20, 30],
+   pressure: [90, 100, 110]
+};
+
+const hydratedDoe = hydratedFullfact(factorMatrix);
+
+console.log(hydratedDoe);
+// [
+//   { temperature: 10, pressure: 90 },
+//   { temperature: 20, pressure: 90 },
+//   { temperature: 30, pressure: 90 },
+//   { temperature: 10, pressure: 100 },
+//   { temperature: 20, pressure: 100 },
+//   { temperature: 30, pressure: 100 },
+//   { temperature: 10, pressure: 110 },
+//   { temperature: 20, pressure: 110 },
+//   { temperature: 30, pressure: 110 }
+// ]
+```
+
+## Contributing
+
+This package is a derivative work, based on the python project [pyDOE](https://github.com/tisimst/pyDOE).
+Thanks to the author of that work and all contributors.
+
+Please feel free to reach out to the `author`\_ for any and all feedback.
+
+## License
+
+[BSD (3-Clause)](https://opensource.org/licenses/BSD-3-Clause)
+
+Copyright (c) 2022, Justin Cartwright
+
+Copyright (c) 2014, Abraham D. Lee
+
+## References
+
+.. \_author: mailto:cartwright.76@gmail.com
+.. \_Factorial designs: https://en.wikipedia.org/wiki/Factorial_experiment
+.. \_package homepage: https://github.com/jcartw/fullfact
