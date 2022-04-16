@@ -22,8 +22,10 @@
   },
   "homepage": "https://github.com/jcartw/fullfact#readme",
   "dependencies": {
-    "chai": "^4.3.6",
-    "mocha": "^9.2.2",
     "ramda": "^0.28.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
   }
 }
